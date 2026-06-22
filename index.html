@@ -156,9 +156,9 @@
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
         }
 
-        /* ----- SEÇÃO: A DOR (CARDS ANIMADOS) ----- */
+        /* ----- SEÇÃO: CARDS ANIMADOS ----- */
         .pain-section {
-            padding: 80px 20px 60px 20px;
+            padding: 80px 20px 40px 20px;
             max-width: 1100px;
             margin: 0 auto;
             position: relative;
@@ -212,7 +212,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, transparent, #ef4444, transparent);
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
             opacity: 0.7;
         }
 
@@ -233,6 +233,18 @@
         .pain-card:nth-child(1) { animation-delay: 0.2s; }
         .pain-card:nth-child(2) { animation-delay: 0.4s; }
         .pain-card:nth-child(3) { animation-delay: 0.6s; }
+
+        /* Estilo para links normais no rodapé */
+        .footer-link {
+            color: var(--accent-neon);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .footer-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
 
         /* ----- KEYFRAMES ----- */
         @keyframes fadeInUp {
@@ -271,12 +283,12 @@
         <header class="hero-content">
             <h1>We Scale High-Ticket Businesses By Delivering Vetted <span>Ready-To-Buy Clients</span> Straight To Your Calendar.</h1>
             <p>Stop wasting energy on cold leads or low-value inquiries. Our automated framework qualifies, warms up, and books high-value sales appointments directly into your business dashboard.</p>
-            <a href="https://wa.me/1860" class="cta-btn-neon">Secure Your Growth Audit</a>
+            <a href="https://wa.me/18608317322" target="_blank" class="cta-btn-neon">Secure Your Growth Audit</a>
         </header>
     </div>
 
     <section class="pain-section">
-        <div class="section-title">Why Traditional Marketing <span>Fails</span> High-Ticket Businesses</div>
+        <div class="section-title">Why Traditional Marketing <span style="color:#ef4444;">Fails</span> High-Ticket Businesses</div>
         
         <div class="grid-3">
             <div class="pain-card">
@@ -296,72 +308,77 @@
         </div>
     </section>
 
-</body>
-</html>
-    <section style="padding: 60px 20px; max-width: 1100px; margin: 0 auto; relative; z-index: 2;">
-        <div class="section-title">The Inovax <span>Patient Filter</span> System</div>
+    <section class="pain-section">
+        <div class="section-title">The Inovax <span>Acquisition Filter</span> System</div>
         
         <div class="grid-3">
-            <div class="pain-card" style="animation-delay: 0.1s;">
+            <div class="pain-card">
                 <h3 style="color: var(--accent-neon);">1. Intent-Driven Ads</h3>
-                <p>We target local clients actively searching for high-ticket solutions, premium treatments, or high-value contracts. No curiosity seekers allowed.</p>
+                <p>We target local and global clients actively searching for high-ticket solutions, premium treatments, or high-value contracts. No curiosity seekers allowed.</p>
             </div>
             
-            <div class="pain-card" style="animation-delay: 0.2s;">
+            <div class="pain-card">
                 <h3 style="color: var(--accent-neon);">2. Qualification Funnel</h3>
                 <p>Before booking a slot, candidates must pass our filtering check, answering key questions regarding their urgency, budget, and purchasing intent.</p>
             </div>
             
-            <div class="pain-card" style="animation-delay: 0.3s;">
+            <div class="pain-card">
                 <h3 style="color: var(--accent-neon);">3. Automated Booking</h3>
                 <p>Only fully vetted, highly motivated prospects are allowed to schedule a discovery call straight into your business calendar or WhatsApp pipeline.</p>
             </div>
         </div>
     </section>
 
-    <section style="padding: 60px 20px; max-width: 1100px; margin: 0 auto; text-align: center; relative; z-index: 2;">
+    <section class="pain-section" style="text-align: center;">
         <div class="section-title">Built For <span>High-Growth</span> Operations</div>
         
-        <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));">
-            <div class="pain-card" style="animation-delay: 0.4s;">
+        <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); justify-content: center;">
+            <div class="pain-card">
                 <h3>Performance Driven</h3>
                 <p>We operate on a month-to-month basis. No long-term commitments or binding contracts. We earn your partnership every single month based on the actual revenue opportunities we secure for you.</p>
             </div>
             
-            <div class="pain-card" style="animation-delay: 0.5s;">
+            <div class="pain-card">
                 <h3>Zero Staff Burden</h3>
                 <p>Since our infrastructure filters and books the appointments automatically, your sales team doesn't waste time on cold outreach. They simply show up to close pre-qualified prospects.</p>
             </div>
         </div>
     </section>
-    <section style="padding: 60px 20px; max-width: 800px; margin: 0 auto; relative; z-index: 2;">
+
+    <section class="pain-section" style="max-width: 800px;">
         <div class="section-title">Frequently Asked <span>Questions</span></div>
         
-        <div class="pain-card" style="margin-bottom: 15px; border-color: rgba(255,255,255,0.08);">
-            <h4 style="color: var(--accent-neon); margin-bottom: 10px; font-size: 1.15em;">How are your leads qualified?</h4>
+        <div class="pain-card" style="margin-bottom: 15px;">
+            <h4 style="color: var(--accent-neon); margin-bottom: 10px; font-size: 1.1em;">How are your leads qualified?</h4>
             <p>We do not sell raw, cold leads. We build an automated pipeline that filters prospects based on their budget, real urgency, and actual intent to purchase before they ever reach your team.</p>
         </div>
         
-        <div class="pain-card" style="margin-bottom: 15px; border-color: rgba(255,255,255,0.08);">
-            <h4 style="color: var(--accent-neon); margin-bottom: 10px; font-size: 1.15em;">Do we have to sign a long-term contract?</h4>
+        <div class="pain-card" style="margin-bottom: 15px;">
+            <h4 style="color: var(--accent-neon); margin-bottom: 10px; font-size: 1.1em;">Do we have to sign a long-term contract?</h4>
             <p>No. We work entirely on performance and a flexible month-to-month basis. We believe in earning your business through consistent results, not restrictive contracts.</p>
         </div>
 
-        <div class="pain-card" style="margin-bottom: 15px; border-color: rgba(255,255,255,0.08);">
-            <h4 style="color: var(--accent-neon); margin-bottom: 10px; font-size: 1.15em;">How fast will we see calendar appointments?</h4>
+        <div class="pain-card" style="margin-bottom: 15px;">
+            <h4 style="color: var(--accent-neon); margin-bottom: 10px; font-size: 1.1em;">How fast will we see calendar appointments?</h4>
             <p>Once our automated framework is linked to your business ecosystem, qualified appointments usually begin filtering into your dashboard within the first 7 to 14 days of campaign deployment.</p>
         </div>
     </section>
 
     <footer style="background-color: #03050a; padding: 60px 20px 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95em; position: relative; z-index: 2;">
         <p style="color: white; margin-bottom: 10px;"><strong>Inovax Agency</strong> &copy; 2026 | High-Ticket Customer Acquisition Systems.</p>
-        <p style="color: var(--text-muted); font-size: 0.9em; margin-bottom: 30px;">All Rights Reserved.</p>
+        
+        <p style="margin-bottom: 30px;">
+            <a href="https://www.instagram.com/inovax.io?igsh=MWh1NHVjOTF2Y251ZQ==" target="_blank" class="footer-link">Follow us on Instagram @inovax.io</a>
+        </p>
         
         <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85em; color: #475569; line-height: 1.8;">
             <p style="margin-bottom: 5px;"><strong style="color: #64748b;">Corporate & Regulatory Information:</strong></p>
             <p>Legal Entity Name: 67.211.255 PAULO HENRIQUE ALENCAR DE MORAES LOURENCO</p>
-            <p>Corporate Tax ID (CNPJ): 67.211.255/0001-74 </p>
+            <p>Corporate Tax ID (CNPJ): 67.211.255/0001-74</p>
             <p>Official Registered Address: Rua Minervina Borges, SN, QD H LT 22, Residencial Morumbi - Goiânia, GO, Brazil - ZIP Code: 74574-050</p>
             <p>Primary Corporate Contact: contact@inovaxagency.com</p>
         </div>
     </footer>
+
+</body>
+</html>
