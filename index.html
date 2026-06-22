@@ -3,143 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inovax Agency | High-Value Patient Acquisition for Dentists</title>
+    <title>Inovax Agency | High-Value Patient Acquisition Systems for Dentists</title>
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
+            --bg-dark: #0b0f19;
+            --bg-card: #131c2e;
+            --accent-blue: #3b82f6;
+            --accent-neon: #00f2fe;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
             --success: #25d366;
-            --text: #334155;
-            --light: #f8fafc;
         }
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--light);
-            color: var(--text);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
         }
+        .navbar {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e293b;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: linear-gradient(to right, #fff, var(--accent-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         header {
-            background-color: var(--primary);
-            color: white;
-            padding: 80px 20px;
+            padding: 100px 5% 80px 5%;
             text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         h1 {
+            font-size: 3.2em;
+            line-height: 1.2;
             margin: 0;
-            font-size: 2.8em;
-            font-weight: bold;
+            font-weight: 800;
             letter-spacing: -1px;
+        }
+        h1 span {
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         header p {
             font-size: 1.3em;
-            max-width: 700px;
-            margin: 20px auto;
-            color: #94a3b8;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 25px auto;
         }
         .cta-btn {
             display: inline-block;
-            background-color: var(--success);
+            background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
             color: white;
-            padding: 16px 32px;
+            padding: 18px 36px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 6px;
-            margin-top: 25px;
+            border-radius: 8px;
             font-size: 1.1em;
-            transition: transform 0.2s;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
         }
         .cta-btn:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
         }
         .section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
+            padding: 80px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-title {
             text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            font-weight: 700;
         }
-        .section h2 {
-            font-size: 2em;
-            color: var(--primary);
-            margin-bottom: 30px;
+        .section-title span {
+            color: var(--accent-neon);
         }
-        .grid {
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
         .card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            text-align: left;
+            background-color: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+            transition: border 0.3s;
+        }
+        .card:hover {
+            border-color: var(--accent-blue);
         }
         .card h3 {
             margin-top: 0;
-            color: var(--accent);
+            font-size: 1.4em;
+            color: white;
+        }
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .faq-item {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #1e293b;
+            text-align: left;
+        }
+        .faq-item h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: var(--accent-neon);
+        }
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
         }
         footer {
-            background-color: var(--primary);
-            color: #94a3b8;
-            padding: 50px 20px;
-            font-size: 0.9em;
+            background-color: #070a12;
+            padding: 60px 5% 40px 5%;
             text-align: center;
-            border-top: 4px solid var(--accent);
-        }
-        footer p {
-            margin: 8px 0;
+            border-top: 1px solid #1e293b;
+            font-size: 0.95em;
         }
         .legal-info {
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 1px solid #334155;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #1e293b;
             font-size: 0.85em;
-            color: #64748b;
+            color: #475569;
+            text-align: center;
+            line-height: 1.8;
         }
     </style>
 </head>
 <body>
 
+    <div class="navbar">
+        <div class="logo">Inovax Agency</div>
+        <div style="color: var(--text-muted); font-size: 0.9em;">🇺🇸 Exclusive for US Practices</div>
+    </div>
+
     <header>
-        <h1>We Bring 10-15 New Implant Patients To Your Dental Practice Every Month.</h1>
-        <p>A proprietary local acquisition system built exclusively for growth-minded dentists in the US. Fully automated, directly into your calendar.</p>
-        <a href="https://wa.me/1860" class="cta-btn">🧑‍💻 Speak with an Expert</a>
+        <h1>We Deliver 10 to 15 Pre-Qualified <span>Implant Patients</span> Directly To Your Calendar Every Month.</h1>
+        <p>Stop wasting money on shared leads, price-shoppers, or agencies that don't understand dentistry. We run a proprietary patient acquisition engine built exclusively for growth-minded dental clinics.</p>
+        <a href="https://wa.me/1860" class="cta-btn">Schedule an Acquisition Audit</a>
     </header>
 
     <div class="section">
-        <h2>Our Guaranteed Method</h2>
-        <div class="grid">
+        <div class="section-title">Why General Marketing <span>Fails</span> For Dentists</div>
+        <div class="grid-3">
             <div class="card">
-                <h3>1. Hyper-Targeting</h3>
-                <p>We target high-intent patients in your local area actively searching for major dental treatments and implants.</p>
+                <h3>Shared "Curious" Leads</h3>
+                <p>Most agencies run cheap ads that attract people looking for "free cleanings". They dump numbers on your front desk team, wasting hours of manual follow-up on cold leads.</p>
             </div>
             <div class="card">
-                <h3>2. Instant Conversion</h3>
-                <p>We use high-converting qualification funnels to filter out price-shoppers and capture high-value patients.</p>
+                <h3>The Price-Shopper Problem</h3>
+                <p>Without proper ad filtering, you end up with leads asking for massive discounts, who don't show up for appointments or can't afford high-value implant treatments.</p>
             </div>
             <div class="card">
-                <h3>3. Direct Booking</h3>
-                <p>Qualified leads are pushed directly into your office system or WhatsApp, ready for your team to schedule.</p>
+                <h3>No Clinical Alignment</h3>
+                <p>Generic marketers don't know the difference between a single implant case, an All-on-4 client, or an Invisalign lead. We speak fluent dental metrics.</p>
             </div>
         </div>
     </div>
 
+    <div class="section">
+        <div class="section-title">The Inovax <span>Patient Filter</span> System</div>
+        <div class="grid-3">
+            <div class="card">
+                <h3 style="color: var(--accent-neon);">1. Intent-Driven Ads</h3>
+                <p>We target local patients actively researching implant surgeons, major restorative work, or second opinions on expensive treatments.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--accent-neon);">2. Qualification Funnel</h3>
+                <p>Before booking, candidates must pass our qualification check, answering questions regarding their case urgency, insurance status, and financial capability.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--accent-neon);">3. Automated Booking</h3>
+                <p>Only fully vetted, motivated patients are allowed to book a consultation slot straight into your office's scheduling system.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="max-width: 800px;">
+        <div class="section-title">Frequently Asked <span>Questions</span></div>
+        <div class="faq-item">
+            <h4>How are your leads different?</h4>
+            <p>We do not sell raw leads. We build an automated pipeline that qualifies the prospect on their intent and ability to pay for major procedures before they ever talk to your staff.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Do we have to sign a long-term contract?</h4>
+            <p>No. We operate on performance and a month-to-month basis. We earn your business every single month based on the actual patient volume we deliver.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How much time does my staff need to spend on this?</h4>
+            <p>Virtually zero. Since our system pre-qualifies and helps book the appointment, your front-desk team simply focuses on confirming the day-of arrival and handling the in-office intake.</p>
+        </div>
+    </div>
+
     <footer>
-        <p><strong>Inovax Agency</strong> &copy; 2026 | All Rights Reserved.</p>
-        <p>Dental Marketing & Patient Acquisition Systems.</p>
+        <p><strong>Inovax Agency</strong> &copy; 2026 | Patient Acquisition Systems for Elite Dental Practices.</p>
         
         <div class="legal-info">
-            <p><strong>Corporate Information:</strong></p>
-            <p>Legal Name: 67.211.255 PAULO HENRIQUE ALENCAR DE MORAES LOURENCO</p>
-            <p>CNPJ: 67.211.255/0001-74 </p>
-            <p>Business Address: Rua Minervina Borges, SN, QD H LT 22, Residencial Morumbi - Goiânia, GO, Brazil - CEP: 74574-050</p>
-            <p>Contact: contact@inovaxagency.com</p>
+            <p><strong>Corporate & Regulatory Information:</strong></p>
+            <p>Legal Entity Name: 67.211.255 PAULO HENRIQUE ALENCAR DE MORAES LOURENCO</p>
+            <p>Corporate Tax ID (CNPJ): 67.211.255/0001-74 </p>
+            <p>Official Registered Address: Rua Minervina Borges, SN, QD H LT 22, Residencial Morumbi - Goiânia, GO, Brazil - ZIP Code: 74574-050</p>
+            <p>Primary Corporate Contact: contact@inovaxagency.com</p>
         </div>
     </footer>
 
 </body>
 </html>
-
