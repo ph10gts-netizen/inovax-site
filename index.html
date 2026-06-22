@@ -14,13 +14,19 @@
             --text-muted: #94a3b8;
         }
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+        /* Reset para evitar quebras de página */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-main);
             overflow-x: hidden;
+            width: 100%;
         }
 
         /* ----- PLANO DE FUNDO VIVO (GRID & GLOW) ----- */
@@ -36,42 +42,43 @@
                 linear-gradient(90deg, rgba(21, 32, 54, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
             background-position: center top;
+            width: 100%;
+            padding: 0 20px;
         }
 
         .hero-wrapper::before {
             content: '';
             position: absolute;
-            top: 25%;
+            top: 35%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0,242,254,0.12) 0%, transparent 70%);
-            filter: blur(50px);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0,242,254,0.15) 0%, transparent 70%);
+            filter: blur(40px);
             z-index: 0;
-            animation: pulseGlow 8s infinite alternate;
+            animation: pulseGlow 6s infinite alternate;
         }
 
-        /* ----- NAVBAR COM EFEITO DE VIDRO COMPLETO ----- */
+        /* ----- NAVBAR 100% FIXA PARA SEMPRE ----- */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            box-sizing: border-box;
-            padding: 20px 5%;
+            padding: 18px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            background: rgba(6, 9, 19, 0.7);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            z-index: 1000;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(6, 9, 19, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 9999; /* Garante que fica por cima de tudo */
         }
 
         .logo {
-            font-size: 1.6em;
+            font-size: 1.3em;
             font-weight: 800;
             letter-spacing: -1px;
             background: linear-gradient(45deg, #fff 30%, var(--accent-neon));
@@ -81,32 +88,35 @@
 
         .tag-us {
             color: var(--text-main);
-            font-size: 0.85em;
+            font-size: 0.75em;
             font-weight: 600;
             border: 1px solid rgba(0, 242, 254, 0.3);
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
             background: linear-gradient(90deg, rgba(37, 99, 235, 0.2), rgba(0, 242, 254, 0.2));
             box-shadow: 0 0 15px rgba(0, 242, 254, 0.1);
+            white-space: nowrap; /* Evita quebra de linha no botão */
         }
 
-        /* ----- CONTEÚDO DO TOPO ----- */
+        /* ----- CONTEÚDO DO TOPO TOTALMENTE RESPONSIVO ----- */
         .hero-content {
             position: relative;
             z-index: 1;
             text-align: center;
-            max-width: 950px;
-            padding: 120px 20px 60px 20px;
-            box-sizing: border-box;
+            max-width: 850px;
+            padding: 120px 0px 40px 0px; /* Margem superior para não bater no menu fixo */
+            width: 100%;
             animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
+        /* Tamanho fluido do texto principal para não quebrar em ecrãs pequenos */
         h1 {
-            font-size: 3.5em;
-            line-height: 1.15;
+            font-size: clamp(2em, 7vw, 3.5em); 
+            line-height: 1.2;
             font-weight: 900;
-            letter-spacing: -1.5px;
-            margin: 0;
+            letter-spacing: -1px;
+            width: 100%;
+            word-wrap: break-word;
         }
 
         h1 span {
@@ -118,40 +128,38 @@
         }
 
         header p {
-            font-size: 1.3em;
+            font-size: clamp(1em, 4vw, 1.25em);
             color: var(--text-muted);
-            max-width: 720px;
-            margin: 30px auto;
-            line-height: 1.6;
+            max-width: 680px;
+            margin: 20px auto;
+            line-height: 1.5;
+            width: 100%;
         }
 
-        /* ----- BOTÃO NEON PULSANTE ----- */
+        /* ----- BOTÃO AJUSTADO ----- */
         .cta-btn-neon {
-            position: relative;
             display: inline-block;
             background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
             color: white;
-            padding: 20px 40px;
+            padding: 16px 32px;
             text-decoration: none;
             font-weight: 700;
             border-radius: 50px;
-            font-size: 1.15em;
-            letter-spacing: -0.2px;
+            font-size: clamp(0.95em, 3vw, 1.1em);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.4);
+            margin-top: 15px;
             animation: buttonPulse 2s infinite;
         }
 
         .cta-btn-neon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
         }
 
         /* ----- ANIMATIONS ----- */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -160,28 +168,28 @@
         }
 
         @keyframes pulseGlow {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
         }
 
         @keyframes buttonPulse {
             0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 242, 254, 0); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 242, 254, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-wrapper">
-        <div class="navbar">
-            <div class="logo">Inovax Agency</div>
-            <div class="tag-us">High-Ticket Customer Acquisition</div>
-        </div>
+    <div class="navbar">
+        <div class="logo">Inovax Agency</div>
+        <div class="tag-us">High-Ticket Acquisition</div>
+    </div>
 
+    <div class="hero-wrapper">
         <header class="hero-content">
             <h1>We Scale High-Ticket Businesses By Delivering Vetted <span>Ready-To-Buy Clients</span> Straight To Your Calendar.</h1>
-            <p>Stop wasting energy on cold leads or low-value inquiries. Our automated framework qualifies, warms up, and books high-value sales appointments directly into your business dashboard.</p>
+            <p>Stop wasting energy on cold leads or low-value inquiries. Our automated framework qualifies, warms up, and books high-value sales appointments directly into your dashboard.</p>
             <a href="https://wa.me/1860" class="cta-btn-neon">Secure Your Growth Audit</a>
         </header>
     </div>
