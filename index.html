@@ -196,3 +196,113 @@
 
 </body>
 </html>
+
+        /* ----- SEÇÃO: A DOR (CARD ANIMADO) ----- */
+        .pain-section {
+            padding: 100px 5% 60px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8em, 5vw, 2.5em);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #ef4444; /* Vermelho para dar a sensação de alerta/dor */
+            text-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .pain-card {
+            background-color: #111726;
+            padding: 35px 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            /* Animação inicial de subida controlada pelo navegador */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: showCard 0.8s ease forwards;
+        }
+
+        /* Efeito ao passar o mouse ou tocar */
+        .pain-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-neon);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.08);
+            background-color: #151f33;
+        }
+
+        /* Pequeno detalhe em linha neon no topo de cada card */
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ef4444, transparent);
+            opacity: 0.7;
+        }
+
+        .pain-card h3 {
+            font-size: 1.3em;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .pain-card p {
+            font-size: 0.95em;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Intervalo de animação para os cards entrarem um por um */
+        .pain-card:nth-child(1) { animation-delay: 0.2s; }
+        .pain-card:nth-child(2) { animation-delay: 0.4s; }
+        .pain-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes showCard {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    <section class="pain-section">
+        <div class="section-title">Why Traditional Marketing <span>Fails</span> High-Ticket Businesses</div>
+        
+        <div class="grid-3">
+            <div class="pain-card">
+                <h3>The "Curious Lead" Trap</h3>
+                <p>Generic agencies focus on vanity metrics like "clicks" and "raw leads". They flood your database with tire-kickers who only want free information, destroying your sales team's productivity.</p>
+            </div>
+            
+            <div class="pain-card">
+                <h3>The Price-Shopper War</h3>
+                <p>Without high-intent filtering, your ads end up targeting low-value clients who haggle over prices, demand steep discounts, and ultimately drain your business margins.</p>
+            </div>
+            
+            <div class="pain-card">
+                <h3>Zero System Alignment</h3>
+                <p>Most marketers just run ads and vanish. They don't build proper qualifying funnels or pre-appointment nurturing. You pay for data, not for signed high-ticket contracts.</p>
+            </div>
+        </div>
+    </section>
+
