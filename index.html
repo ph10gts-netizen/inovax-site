@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inovax Agency | Next-Gen Dental Acquisition</title>
+    <title>Inovax Agency | Next-Gen Customer Acquisition</title>
     <style>
         :root {
             --bg-dark: #060913;
@@ -31,7 +31,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* Efeito de grade cibernética ao fundo */
             background-image: 
                 linear-gradient(rgba(21, 32, 54, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(21, 32, 54, 0.1) 1px, transparent 1px);
@@ -39,7 +38,6 @@
             background-position: center top;
         }
 
-        /* Esfera de luz neon pulsante ao fundo */
         .hero-wrapper::before {
             content: '';
             position: absolute;
@@ -54,7 +52,7 @@
             animation: pulseGlow 8s infinite alternate;
         }
 
-        /* ----- NAVBAR COM EFEITO DE VIDRO ----- */
+        /* ----- NAVBAR COM EFEITO DE VIDRO COMPLETO ----- */
         .navbar {
             position: fixed;
             top: 0;
@@ -82,13 +80,14 @@
         }
 
         .tag-us {
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 0.85em;
             font-weight: 600;
-            border: 1px solid rgba(0, 242, 254, 0.2);
+            border: 1px solid rgba(0, 242, 254, 0.3);
             padding: 6px 14px;
             border-radius: 20px;
-            background: rgba(0, 242, 254, 0.03);
+            background: linear-gradient(90deg, rgba(37, 99, 235, 0.2), rgba(0, 242, 254, 0.2));
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.1);
         }
 
         /* ----- CONTEÚDO DO TOPO ----- */
@@ -99,7 +98,6 @@
             max-width: 950px;
             padding: 120px 20px 60px 20px;
             box-sizing: border-box;
-            /* Animação de entrada */
             animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
@@ -111,7 +109,6 @@
             margin: 0;
         }
 
-        /* Texto com degradê animado */
         h1 span {
             background: linear-gradient(90deg, #3b82f6, #00f2fe, #3b82f6);
             background-size: 200% auto;
@@ -142,7 +139,7 @@
             letter-spacing: -0.2px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+            box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.4);
             animation: buttonPulse 2s infinite;
         }
 
@@ -152,16 +149,10 @@
             background: linear-gradient(135deg, #3b82f6, #2563eb);
         }
 
-        /* ----- KEYFRAMES (ONDE A MÁGICA ACONTECE) ----- */
+        /* ----- ANIMATIONS ----- */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes gradientText {
@@ -185,13 +176,13 @@
     <div class="hero-wrapper">
         <div class="navbar">
             <div class="logo">Inovax Agency</div>
-            <div class="tag-us">🇺🇸 High-Value Dental Acquisition</div>
+            <div class="tag-us">High-Ticket Customer Acquisition</div>
         </div>
 
         <header class="hero-content">
-            <h1>We Scale Dental Practices By Delivering 10-15 Vetted <span>Implant Patients</span> Every Month.</h1>
-            <p>Stop dealing with raw leads or cold phone numbers. Our automated acquisition framework qualifies, warms up, and books high-intent patients directly into your schedule.</p>
-            <a href="https://wa.me/1860" class="cta-btn-neon">Secure Your Territory Audit</a>
+            <h1>We Scale High-Ticket Businesses By Delivering Vetted <span>Ready-To-Buy Clients</span> Straight To Your Calendar.</h1>
+            <p>Stop wasting energy on cold leads or low-value inquiries. Our automated framework qualifies, warms up, and books high-value sales appointments directly into your business dashboard.</p>
+            <a href="https://wa.me/1860" class="cta-btn-neon">Secure Your Growth Audit</a>
         </header>
     </div>
 
